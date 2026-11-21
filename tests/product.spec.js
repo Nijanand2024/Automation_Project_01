@@ -12,8 +12,11 @@ test('Add product to cart', async ({ page }) => {
 
   // Add a product to the cart
   await page.getByText('Sauce Labs Backpack').click();
-  await page.getByRole('button', { name: 'Add to cart' }).click();
+  //await page.getByRole('button', { name: 'Add to cart' }).click();
+  //await page.locator('[data-test="add-to-cart-sauce-labs-backpack"]').click();
+  await page.locator('//button[@id="add-to-cart"]').click();
 
-  // Verify the product is in the cart
+  // Verify the product is in the 
+  // 
   await expect(page.getByText('1')).toBeVisible();
 });
